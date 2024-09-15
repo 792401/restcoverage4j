@@ -4,24 +4,21 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class petOperations extends RestAssuredConfig{
+public class StoreOperationsTest extends RestAssuredConfig{
 
 
     @Test
-    public void getPetById(){
+    public void getStoreInventory(){
         RestAssured.baseURI = "http://petstore.swagger.io/v2";
         Response response = given()
                 .header("Content-Type", "application/json")
                 .when()
-                .get("/pet/3")
+                .get("/store/inventory")
                 .then()
                 .statusCode(200)
-                .log().all() // This will log the response to the console
+//                .log().all()
                 .extract().response();
 
-        // Print the response body
         System.out.println("Response Body: " + response.asString());
-
-
     }
 }
