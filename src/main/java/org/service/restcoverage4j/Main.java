@@ -5,6 +5,6 @@ public class Main {
         CoverageCalculator.generateCoverageReport("E:\\Projects\\restcoverage4j\\src\\main\\resources\\openapi\\petstore.yml",
                 "calledEndpoints.json",
                 "coverage.json");
-
+        CoverageReportGenerator.generateHtmlReport("coverage.json","index.html");
     }
 }
