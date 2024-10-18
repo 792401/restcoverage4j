@@ -9,11 +9,9 @@ public class FileUtils {
     public static void saveToJsonFile(String path) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-
-            objectMapper.writeValue(new FileWriter(path), Collector.calledEndpoints);
+            objectMapper.writeValue(new FileWriter(path), Collector.data);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
